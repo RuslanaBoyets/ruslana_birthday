@@ -283,4 +283,63 @@ h1 {
   }
 }
 
+.media-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  text-align: center;
+  background: linear-gradient(to bottom, #fcd6e4, #fbcfe8); /* японский розовый -> бутон вишни */
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
 
+.media-container h2 {
+  font-size: 2rem;
+  color: #d63384;
+  margin-bottom: 1rem;
+}
+
+.media-photo {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  margin-bottom: 2rem;
+  border: 5px solid #f3a6c0; /* персидский розовый */
+}
+
+.video-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.video-wrapper video {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .media-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .media-photo,
+  .video-wrapper video {
+    width: 100%;
+    max-width: 90vw;
+  }
+}
+
+.custom-video {
+  border: 4px solid #f77fbf;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  max-width: 90%;
+  margin: 1.5rem auto;
+  display: block;
+}
