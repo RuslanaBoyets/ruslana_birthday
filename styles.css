@@ -1,0 +1,286 @@
+body {
+  margin: 0;
+  font-family: 'Savate', sans-serif;
+  color: #2d2d2d;
+}
+
+nav {
+  background-color: #f7b2d9; 
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow:
+    -1px -1px 0 #d36ba6,
+     1px -1px 0 #d36ba6,
+    -1px  1px 0 #d36ba6,
+     1px  1px 0 #d36ba6;
+}
+
+nav {
+  background-color: #f7b2d9; 
+  padding: 20px;
+  text-align: center;
+  border-radius: 20px; 
+  margin: 1.5rem auto;
+  max-width: 900px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 48px;
+  color: #d36ba6; 
+  text-shadow:
+    -1px -1px 0 #fbbde0,
+     1px -1px 0 #fbbde0,
+    -1px  1px 0 #fbbde0,
+     1px  1px 0 #fbbde0;
+}
+
+
+
+.nav-links a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  position: relative;
+  z-index: 2;
+  text-shadow:
+    -1px -1px 0 #d36ba6,
+     1px -1px 0 #d36ba6,
+    -1px  1px 0 #d36ba6,
+     1px  1px 0 #d36ba6;
+}
+
+/* Летающие сердечки */
+.floating-hearts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.floating-hearts span {
+  position: absolute;
+  font-size: 1.2rem;
+  animation: floatHeart 10s linear infinite;
+  opacity: 0.7;
+}
+
+.floating-hearts span:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+  animation-duration: 6s;
+}
+
+.floating-hearts span:nth-child(2) {
+  left: 30%;
+  animation-delay: 2s;
+  animation-duration: 5.5s;
+}
+
+.floating-hearts span:nth-child(3) {
+  left: 50%;
+  animation-delay: 4s;
+  animation-duration: 6.5s;
+}
+
+.floating-hearts span:nth-child(4) {
+  left: 70%;
+  animation-delay: 1s;
+  animation-duration: 5s;
+}
+
+.floating-hearts span:nth-child(5) {
+  left: 90%;
+  animation-delay: 3s;
+  animation-duration: 7s;
+}
+
+
+/* Анимация движения по диагонали */
+@keyframes floatHeart {
+  0% {
+    top: 100%;
+    transform: translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.6;
+  }
+  100% {
+    top: -10%;
+    transform: translateX(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+
+.main-bg {
+  background: linear-gradient(to bottom, #ffe3ec, #f8a5c2); 
+}
+
+
+.greeting {
+    background-color: #ffddee;
+    color: #5a2a4f; 
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.greeting span {
+    color: #b03060; 
+    font-weight: bold;
+}
+
+.greeting strong {
+    color: #d63384;
+}
+
+.greeting img {
+  display: block;
+  margin: 0 auto 1.5rem; 
+  max-width: 200px;
+  border-radius: 10px;
+  border: 4px solid #ef6aa3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Стикеры */
+
+.sticker-container {
+  position: relative;
+  display: block;         
+  width: 260px;           
+  margin: 0 auto 2rem;    
+  padding: 30px;          
+  box-sizing: content-box;
+}
+
+.sticker-container img {
+  max-width: 200px;
+  border-radius: 10px;
+  border: 4px solid #ef6aa3;
+  display: block;
+  margin: 0 auto;         
+}
+
+.stickers span {
+  position: absolute;
+  font-size: 1.8rem;
+  opacity: 0.9;
+  animation: floatSticker 3s ease-in-out infinite; 
+}
+
+.stickers span:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+.stickers span:nth-child(2) {
+  bottom: 10px;
+  right: 10px;
+}
+.stickers span:nth-child(3) {
+  top: 50%;
+  left: -10px;
+  transform: translateY(-50%);
+}
+.stickers span:nth-child(4) {
+  top: -10px;
+  right: 5px;
+}
+.stickers span:nth-child(5) {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes floatSticker {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(10deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 600px) {
+  nav {
+    max-width: 100%;
+    padding: 15px 10px;
+    border-radius: 15px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    margin: 5px 8px;
+  }
+
+  .floating-hearts span {
+    font-size: 1rem;
+  }
+
+  .greeting {
+    padding: 1rem 1.2rem;
+    max-width: 95%;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .greeting h1 {
+    font-size: 2rem;
+  }
+
+  .sticker-container {
+    width: 90%;
+    max-width: 260px;
+    padding: 15px;
+  }
+
+  .sticker-container img {
+    max-width: 150px;
+    border-width: 3px;
+  }
+
+  .stickers span {
+    font-size: 1.3rem;
+    animation-duration: 2s;
+  }
+}
+
+
