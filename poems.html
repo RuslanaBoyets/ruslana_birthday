@@ -130,10 +130,18 @@ nav {
 /* Скрываем коллажи на телефонах */
 @media (max-width: 768px) {
   .poem-wrapper {
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
+  .collage {
+    width: 60px; /* уменьшим ширину на телефонах */
+    gap: 0.5rem;
+  }
 
+  .collage img {
+    width: 100%;
+  }
+  
   nav {
     font-size: 1rem;
     padding: 15px 10px;
