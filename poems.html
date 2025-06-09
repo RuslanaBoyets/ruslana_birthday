@@ -127,42 +127,50 @@ nav {
   font-size: 1.4rem;
 }
 
-/* Скрываем коллажи на телефонах */
 @media (max-width: 768px) {
   .poem-wrapper {
     flex-direction: row;
-    align-items: center;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding: 0;
   }
+
   .collage {
-    width: 60px; /* уменьшим ширину на телефонах */
+    display: flex;
+    flex-direction: column;
+    width: 60px;
     gap: 0.5rem;
   }
 
   .collage img {
     width: 100%;
+    height: auto;
+    border-width: 3px;
   }
-  
+
+  .poem-section {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .poem-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .poem-section p {
+    font-size: 1rem;
+  }
+
   nav {
     font-size: 1rem;
     padding: 15px 10px;
   }
 
   .nav-links a {
-    margin: 8px;
-  }
-
-  .poem-section {
-    padding: 1.8rem;
-  }
-
-  .poem-section h2 {
-    font-size: 1.6rem;
-  }
-
-  .poem-section p {
-    font-size: 1.1rem;
+    margin: 6px;
   }
 }
+
 
   </style>
 </head>
