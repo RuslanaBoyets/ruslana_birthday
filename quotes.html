@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Цитаты</title>
+  <link href="https://fonts.googleapis.com/css2?family=Savate&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Savate', sans-serif;
+      background: linear-gradient(to bottom, #ffd3e0, #f6c1d4);
+      color: #4b244a;
+      padding: 2rem;
+    }
+
+    nav {
+      background-color: #f7b2d9;
+      padding: 20px;
+      text-align: center;
+      border-radius: 20px;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      position: relative; /* Важно для position: absolute у сердечек */
+      overflow: hidden; /* Чтобы сердечки не выходили за пределы навбара */
+    }
+
+    .nav-links a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      position: relative; /* Важно для z-index */
+      z-index: 2; /* Чтобы ссылки были поверх сердечек */
+      text-shadow:
+        -1px -1px 0 #d36ba6,
+          1px -1px 0 #d36ba6,
+        -1px  1px 0 #d36ba6,
+          1px  1px 0 #d36ba6;
+    }
+
+    .floating-hearts {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 1; /* Сердечки под ссылками */
+    }
+
+    .floating-hearts span {
+      position: absolute;
+      font-size: 1.2rem;
+      animation: floatHeart 10s linear infinite;
+      opacity: 0.7;
+    }
+
+    /* Настройка задержки и длительности для каждого сердечка */
+    .floating-hearts span:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 6s; }
+    .floating-hearts span:nth-child(2) { left: 30%; animation-delay: 2s; animation-duration: 5.5s; }
+    .floating-hearts span:nth-child(3) { left: 50%; animation-delay: 4s; animation-duration: 6.5s; }
+    .floating-hearts span:nth-child(4) { left: 70%; animation-delay: 1s; animation-duration: 5s; }
+    .floating-hearts span:nth-child(5) { left: 90%; animation-delay: 3s; animation-duration: 7s; }
+
+    /* Определение анимации floatHeart */
+    @keyframes floatHeart {
+      0% { top: 100%; transform: translateX(0) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.6; }
+      80% { opacity: 0.6; }
+      100% { top: -10%; transform: translateX(-100px) rotate(360deg); opacity: 0; }
+    }
+
+    .quote-header {
+      font-family: 'Dancing Script', cursive; /* Использован Dancing Script, как в poems.html */
+      text-align: center;
+      font-size: 1.5rem;
+      color: #d36ba6;
+      margin-bottom: 2rem;
+      font-weight: bold;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .quote-box {
+      background-color: #fff0f6;
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 2rem auto;
+      max-width: 900px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      font-size: 1.2rem;
+      line-height: 1.8;
+      white-space: pre-line;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem; /* Уменьшаем общий padding на маленьких экранах */
+        font-size: 1rem; /* Общий размер шрифта для body */
+      }
+
+      nav {
+        padding: 15px 10px; /* Уменьшаем padding навигации */
+        margin: 1rem auto; /* Корректируем margin */
+        font-size: 1rem; /* Размер текста навигации */
+      }
+
+      .nav-links a {
+        margin: 0 8px; /* Уменьшаем отступы между ссылками */
+        font-size: 1rem; /* Уменьшаем размер шрифта ссылок */
+      }
+
+      .quote-header {
+        font-size: 1.2rem; /* Уменьшаем размер заголовка */
+        margin-bottom: 1.5rem; /* Корректируем отступ */
+      }
+
+      .quote-box {
+        padding: 1.5rem; /* Уменьшаем padding для блоков цитат */
+        margin: 1.5rem auto; /* Корректируем margin */
+        font-size: 1rem; /* Уменьшаем размер шрифта цитат */
+        line-height: 1.6; /* Корректируем межстрочный интервал */
+      }
+
+      /* Можно добавить корректировку для сердечек, если нужно,
+         например, уменьшить их размер или количество */
+      .floating-hearts span {
+        font-size: 0.8rem; /* Уменьшаем размер сердечек */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="floating-hearts">
+      <span>❤️</span>
+      <span>💗</span>
+      <span>💖</span>
+      <span>💘</span>
+      <span>💕</span>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Главная</a>
+      <a href="poems.html">Стихи</a>
+      <a href="gallery.html">Фото и Видео</a> <a href="quotes.html">Цитаты</a>
+    </div>
+  </nav>
+
+  <div class="quote-header">
+    Цитаты из твоего канала, обнови страницу чтобы увидеть другие❤️
+  </div>
+
+  <div id="quotes-container"></div>
+
+<script>
+  async function loadQuotes() {
+    try {
+      const response = await fetch('quotes.json');
+      const quotes = await response.json();
+
+      const shuffled = quotes.sort(() => 0.5 - Math.random());
+      const selectedQuotes = shuffled.slice(0, 3);
+
+      const container = document.getElementById('quotes-container');
+
+      selectedQuotes.forEach(quote => {
+        const div = document.createElement('div');
+        div.className = 'quote-box';
+        div.textContent = quote;
+        container.appendChild(div);
+      });
+    } catch (error) {
+      console.error('Ошибка загрузки цитат:', error);
+    }
+  }
+
+  loadQuotes();
+</script>
+
+
+</body>
+</html>
